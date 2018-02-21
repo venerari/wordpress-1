@@ -41,6 +41,7 @@ You can use the database vm to act as the manager to install this playbook, so y
 sh -c 'echo -e "[centos]\nname=CentOS $releasever - $basearch\nbaseurl=http://mirror.centos.org/centos/7/os/\$basearch/\nenabled=1\ngpgcheck=1\ngpgkey=http://mirror.centos.org/centos/7/os/\$basearch/RPM-GPG-KEY-CentOS-7" > /etc/yum.repos.d/centos.repo'<br>
 wget https://archive.fedoraproject.org/pub/epel/7Server/x86_64/Packages/e/epel-release-7-11.noarch.rpm<br>
 rpm -ivh epel-release-7-11.noarch.rpm<br>
+yum install git ansible -y
 
 Also better use ssh login only and enable sudo no passwd (otherwise you have to use root login on ansible),<br>
 
