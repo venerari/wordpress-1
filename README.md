@@ -53,4 +53,4 @@ But you still have to create the Title and Login for the Wordpress App on the fi
 
 This is intended to be use with the Terraform Loab Balance template.<br>
 
-http://gitlab-scm.52.235.39.185.nip.io/tso-mto-gitlab/terraform-lb.git
+https://github.com/tso-terraform/terraform-lb.git
