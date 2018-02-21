@@ -52,7 +52,7 @@ sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
 Run,
 
 ansible-playbook db.yml<br>
-ansible-playbook webser.yml
+ansible-playbook webserver.yml
 
 The connection of the wordpress app and the database is already done, you may check the wordpress/template/wp-config.j2.<br>
 But you still have to create the Title and Login for the Wordpress App on the first connection.<br>
