@@ -5,7 +5,7 @@
 
 This is a two tier app for Wordpress app, one for webserver and the database/mysql.<br>
 You need to have at two webserver vm and one database vm.<br>
-The two webserver is intended for Load Balancer.<br>
+The two webserver is intended for Load Balancing.<br>
 
 On the group_vars/all,<br>
 
