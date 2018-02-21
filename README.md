@@ -22,8 +22,31 @@ dbuser: wordpress<br>
 dbpassword: password<br>
 
 Modify the ip address according to your vm.  The web1ip should be the ip of your first webserver vm.<br>  
-The script is designed for two webserver only you have to modify according to your requirements.<br>  
+The script is designed for two webserver only you have to modify according to your requirements.
 The mysqlip should have the ip of your database vm and it's designed for one database.<br>
+
+On your ansible-playbook/hosts,
+
+[db]
+10.0.10.4
+
+[webserver]
+10.0.10.5
+10.0.10.6
+
+It's better to play with ip when you don't have DNS server.
+
+You can use the database vm to act as the manager to install this playbook, so you need to execute these on it,<br>
+
+sh -c 'echo -e "[centos]\nname=CentOS $releasever - $basearch\nbaseurl=http://mirror.centos.org/centos/7/os/\$basearch/\nenabled=1\ngpgcheck=1\ngpgkey=http://mirror.centos.org/centos/7/os/\$basearch/RPM-GPG-KEY-CentOS-7" > /etc/yum.repos.d/centos.repo'<br>
+wget https://archive.fedoraproject.org/pub/epel/7Server/x86_64/Packages/e/epel-release-7-11.noarch.rpm<br>
+rpm -ivh epel-release-7-11.noarch.rpm<br>
+
+Also better use ssh login only and enable sudo no passwd (otherwise you have to use root login on ansible),<br>
+
+sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.4<br>
+sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.5<br>
+sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
 
 The connection of the wordpress app and the database is already done.<br>
 But you still have to create the Title and Login for the wordpress app.<br>
