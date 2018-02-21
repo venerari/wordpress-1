@@ -27,12 +27,12 @@ The mysqlip should have the ip of your database vm and it's designed for one dat
 
 On your ansible-playbook/hosts,
 
-[db]
+[db]<br>
 10.0.10.4
 
-[webserver]
-10.0.10.5
-10.0.10.6
+[webserver]<br>
+10.0.10.5<br>
+10.0.10.6<br>
 
 It's better to play with ip when you don't have DNS server.
 
@@ -51,6 +51,6 @@ sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
 The connection of the wordpress app and the database is already done, you may check the wordpress/template/wp-config.j2.<br>
 But you still have to create the Title and Login for the Wordpress App on the first connection.<br>
 
-This is intended to be use with the Terraform Loab Balance template.
+This is intended to be use with the Terraform Loab Balance template.<br>
 
-https://github.com/tso-terraform/terraform-lb.git
+http://gitlab-scm.52.235.39.185.nip.io/tso-mto-gitlab/terraform-lb.git
