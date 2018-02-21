@@ -1,9 +1,11 @@
-# Wordpress Two Tier App Template
+# Wordpress Two Tier App Template on a Load Balance Webserver.
 
 <img alt="Wordpress" src="https://raw.githubusercontent.com/tso-ansible/wordpress/master/wordpress.jpg" width="600px">
 
 
 This is a two tier app for Wordpress app, one for webserver and the database/mysql.<br>
+You need to have at two webserver vm and one database vm.<br>
+The two webserver is intended for Load Balancer.<br>
 
 On the group_vars/all,<br>
 
@@ -19,8 +21,9 @@ dbname: wordpressdb<br>
 dbuser: wordpress<br>
 dbpassword: password<br>
 
-Modify the ip address according to your vm.  The web1ip should be the ip of your first webserver vm.  The script is designed for two webserver only<br>
-you have to modify according to your requirements.  The mysqlip should have the ip of your database vm and it's designed for one database.<br>
+Modify the ip address according to your vm.  The web1ip should be the ip of your first webserver vm.<br>  
+The script is designed for two webserver only you have to modify according to your requirements.<br>  
+The mysqlip should have the ip of your database vm and it's designed for one database.<br>
 
 The connection of the wordpress app and the database is already done.<br>
 But you still have to create the Title and Login for the wordpress app.<br>
