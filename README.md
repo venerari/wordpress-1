@@ -36,6 +36,8 @@ On your ansible-playbook/hosts,
 
 It's better to play with ip when you don't have DNS server.
 
+Note: all execution should be done on the database vm.
+
 You can use the database vm to act as the manager to install this playbook, so you need to execute these on it,<br>
 
 sh -c 'echo -e "[centos]\nname=CentOS $releasever - $basearch\nbaseurl=http://mirror.centos.org/centos/7/os/\$basearch/\nenabled=1\ngpgcheck=1\ngpgkey=http://mirror.centos.org/centos/7/os/\$basearch/RPM-GPG-KEY-CentOS-7" > /etc/yum.repos.d/centos.repo'<br>
