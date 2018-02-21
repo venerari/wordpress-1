@@ -1,0 +1,52 @@
+
+
+setenforce 0
+sed -i 's/enforcing/disabled/g' /etc/selinux/config
+
+yum install httpd php php-common php-mysqlnd php-mbstring php-gd mod_ssl -y
+
+
+sed -i 's/AllowOverride none/AllowOverride all/g' /etc/httpd/conf/httpd.conf
+
+systemctl start httpd 
+
+curl -O https://wordpress.org/latest.tar.gz
+
+tar zxvf latest.tar.gz
+
+mv wordpress/* /var/www/html/
+
+chown -R apache:apache /var/www/html
+
+
+- name: Creates directory /etc/httpd/conf/
+  file:
+    path: /etc/httpd/conf/
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+    recurse: yes
+
+grep 'AllowOverride none' /etc/httpd/conf/httpd.conf
+
+
+- name: Extract wordpress
+  unarchive:
+    src: /tmp/latest.tar.gz
+    dest: /tmp
+
+- name: Extract wordpress again
+  unarchive:
+    src: /tmp/wordpress*.tar.gz
+    dest: /tmp
+    
+- name: Move wordpress to www
+  shell: mv /tmp/wordpress/*  /var/www/html/
+  
+- name: Change ownership of html
+  shell: chown -R apache:apache /var/www/html
+  args:
+    executable: /bin/bash
+   
+   

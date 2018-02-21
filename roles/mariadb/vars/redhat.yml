@@ -1,0 +1,3 @@
+---
+
+createdbandgrantuser: "CREATE DATABASE {{ dbname }}; GRANT ALL PRIVILEGES ON {{ dbname }}.* TO '{{ dbuser }}'@'{{ web1ip }}' IDENTIFIED BY '{{ dbpassword }}';GRANT ALL PRIVILEGES ON {{ dbname }}.* TO '{{ dbuser }}'@'{{ web2ip }}' IDENTIFIED BY '{{ dbpassword }}';"

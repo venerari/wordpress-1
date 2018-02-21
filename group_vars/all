@@ -1,0 +1,12 @@
+---
+selinux: disabled
+web1name: vm1
+web2name: vm2
+mysqlname: mysql        # value should be the same on dbhost
+web1ip: 192.168.2.70
+web2ip: 192.168.2.71
+mysqlip: 192.168.2.105
+dbname: wordpressdb
+dbuser: wordpress
+dbpassword: password
+dbhost: mysql           # value should be the same on mysqlname
