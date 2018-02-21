@@ -45,6 +45,13 @@ yum install git ansible sshpass -y
 
 Also better use ssh login only and enable sudo no passwd (otherwise you have to use root login on ansible),<br>
 
+This is intended to be use with the Terraform Loab Balance template.<br>
+
+https://github.com/tso-terraform/terraform-lb.git
+
+If you pre-deployed your ssh on the terraform, you may also put the rest on the .ssh/id_rsa and .ssh/id_rsa.pub on the database vm,<br>
+don't forget to put this command "chmod -R 700 .ssh".
+
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.4<br>
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.5<br>
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
@@ -56,7 +63,3 @@ ansible-playbook webserver.yml
 
 The connection of the wordpress app and the database is already done, you may check the wordpress/template/wp-config.j2.<br>
 But you still have to create the Title and Login for the Wordpress App on the first connection.<br>
-
-This is intended to be use with the Terraform Loab Balance template.<br>
-
-https://github.com/tso-terraform/terraform-lb.git
