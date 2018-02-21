@@ -48,5 +48,5 @@ sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.4<br>
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.5<br>
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
 
-The connection of the wordpress app and the database is already done.<br>
-But you still have to create the Title and Login for the wordpress app.<br>
+The connection of the wordpress app and the database is already done, you may check the wordpress/template/wp-config.j2.<br>
+But you still have to create the Title and Login for the Wordpress App first connection.<br>
