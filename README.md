@@ -12,6 +12,8 @@ wget https://archive.fedoraproject.org/pub/epel/7Server/x86_64/Packages/e/epel-r
 
 rpm -ivh epel-release-7-11.noarch.rpm<br>
 
+***make sure your epel-release is version 7-11***
+
 yum install git ansible sshpass -y
 
 Exit now on root.
