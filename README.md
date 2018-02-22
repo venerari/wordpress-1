@@ -2,7 +2,7 @@
 
 <img alt="Wordpress" src="https://raw.githubusercontent.com/tso-ansible/wordpress/master/wordpress.jpg" width="600px">
 
-Note: all execution should be done on the database vm.
+Note: all execution should be done on the database vm so that you don't have to worry about firewall.
 
 You can use the database vm to act as the manager to install this playbook, so you need to execute these on it,<br>
 
@@ -27,6 +27,8 @@ sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
 Run,
 
 ansible-galaxy install tso-ansible.wordpress
+
+***You need to cd to /etc/ansible/roles/tso-ansible.wordpress.***
 
 This is a two tier app for Wordpress app, one for webserver and the database/mysql.<br>
 You need to have at two webserver vm and one database vm.<br>
