@@ -41,8 +41,8 @@ selinux: disabled<br>
 web1name: vm0<br>
 web2name: vm1<br>
 mysqlname: vmdb<br>      
-web1ip: 10.0.10.6<br>
-web2ip: 10.0.10.5<br>
+web1ip: 10.0.10.5<br>
+web2ip: 10.0.10.6<br>
 mysqlip: 10.0.10.4<br>
 dbname: wordpressdb<br>
 dbuser: wordpress<br>
