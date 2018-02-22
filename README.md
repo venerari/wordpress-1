@@ -60,6 +60,8 @@ sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.6<br>
 
 Run,
 
+ansible-galaxy install tso-ansible.wordpress
+
 ansible-playbook db.yml<br>
 ansible-playbook webserver.yml
 
