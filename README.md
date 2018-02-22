@@ -52,7 +52,7 @@ This is intended to be use with the Terraform Loab Balance template.<br>
 https://github.com/tso-terraform/terraform-lb.git
 
 If you pre-deployed your ssh on the terraform, you may also put the rest on the .ssh/id_rsa and .ssh/id_rsa.pub on the database vm,<br>
-don't forget to put this command "chmod -R 700 .ssh".
+don't forget to put this command "chmod -R 0700 .ssh".
 
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.4<br>
 sshpass ssh-copy-id -o StrictHostKeyChecking=no 10.0.10.5<br>
