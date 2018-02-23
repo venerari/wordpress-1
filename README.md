@@ -35,7 +35,7 @@ Run,
 
 sudo ansible-galaxy install tso-ansible.wordpress
 
-***You need to cd to /etc/ansible/roles/tso-ansible.wordpress.***
+***You need to cd to /etc/ansible/roles/tso-ansible.wordpress as regular user not root.***
 
 This is a two tier app for Wordpress app, one for webserver and the database/mysql.<br>
 You need to have at two webserver vm and one database vm.<br>
