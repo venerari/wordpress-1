@@ -59,7 +59,7 @@ Modify the ip address according to your vm.  The web1ip should be the ip of your
 The script is designed for two webserver only you have to modify according to your requirements.
 The mysqlip should have the ip of your database vm and it's designed for one database.<br>
 
-On your ansible-playbook/hosts,
+On your  ***/etc/ansible/hosts,***
 
 [db]<br>
 10.0.10.4
