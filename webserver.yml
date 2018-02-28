@@ -1,5 +1,5 @@
 ---
-- hosts: webserver
+- hosts: sdcgigdcapmdw01
   become: true
   roles:
     - wordpress
