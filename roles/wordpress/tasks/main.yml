@@ -3,39 +3,13 @@
 - name: Include Redhat vars
   include_vars: redhat.yml
   when: ansible_os_family == "RedHat"
-
-- name: Add the web1 to hosts
-  lineinfile:
-    path: /etc/hosts
-    line: '{{ web1ip }} {{ web1name }}'
-
-- name: Add the web2 to hosts
-  lineinfile:
-    path: /etc/hosts
-    line: '{{ web2ip }} {{ web2name }}'
-
-- name: Add the mysql to hosts
-  lineinfile:
-    path: /etc/hosts
-    line: '{{ mysqlip }} {{ mysqlname }}'
-
-- name: Stop selinux
-  shell: setenforce 0
-  args:
-    executable: /bin/bash
-
-- name: Template to edit selinux
-  template:
-    src=config.j2
-    dest=/etc/selinux/config
-
+  
 - name: Install Php Group
   yum:  pkg={{ item }} state=present
   with_items:
      - httpd
      - php
      - php-common
-     - php-mysqlnd
      - php-mbstring
      - php-gd
      - mod_ssl
@@ -52,34 +26,11 @@
 - name: Start httpd
   systemd: state=started name=httpd
 
-- firewalld:
-    service: https
-    permanent: true
-    state: enabled
-
-- firewalld:
-    service: http
-    permanent: true
-    state: enabled
-
-- name: Restart firewalld
-  service:
-    name: firewalld
-    state: restarted
-
-- name: Download wordpress
-  get_url:
-    url: https://wordpress.org/wordpress-4.9.4.tar.gz
-    dest: /tmp
-
-- name: Extract wordpress
-  unarchive:
-    src: /tmp/wordpress-4.9.4.tar.gz
-    dest: /tmp
-    remote_src: yes
+- name: Move wordpress - WILL FAIL IF ALREADY DONE
+  shell: cp /home/venerari/ansible/ansible-cmdb/overview.html /var/www/html/
 
 - name: Move wordpress - WILL FAIL IF ALREADY DONE
-  shell: mv /tmp/wordpress/* /var/www/html/
+  shell: cp -R /home/venerari/ansible/ansible-cmdb/out /var/www/html/
 
 - name: Change ownership of html
   file:
