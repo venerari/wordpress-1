@@ -15,28 +15,4 @@
      - mod_ssl
   when: ansible_os_family == "RedHat"
 
-- name: Template to edit httpd.conf
-  template:
-    src=httpd.j2
-    dest=/etc/httpd/conf/httpd.conf
-
-- name: Enable httpd
-  systemd: enabled=yes name=httpd
-
-- name: Start httpd
-  systemd: state=started name=httpd
-
-- name: Move wordpress - WILL FAIL IF ALREADY DONE
-  shell: cp /home/venerari/ansible/ansible-cmdb/overview.html /var/www/html/
-
-- name: Move wordpress - WILL FAIL IF ALREADY DONE
-  shell: cp -R /home/venerari/ansible/ansible-cmdb/out /var/www/html/
-
-- name: Change ownership of html
-  file:
-    path: /var/www/html
-    owner: apache
-    group: apache
-    mode: 0755
-    recurse: yes
 
