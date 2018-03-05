@@ -1,5 +1,5 @@
 ---
-- hosts: centos
+- hosts: vm2
   become: true
   roles:
     - wordpress
