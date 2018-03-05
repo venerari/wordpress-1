@@ -1,5 +1,5 @@
 ---
-- hosts: mysql
+- hosts: centos
   become: true
   roles:
     - wordpress
